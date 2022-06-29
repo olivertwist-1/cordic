@@ -120,7 +120,7 @@ class Client:
             if fun is None:
                 return
 
-            name = fun.__name__
+            name = func_name
 
             obj = kwargs.get("data")
 

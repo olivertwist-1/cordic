@@ -31,9 +31,10 @@ from .APIBase.message_base import *
 from .APIBase.user_base import *
 from .APIBase.role_base import *
 
-__author__ = [("Oliver", "Sebastian"), ("Tekgar", "Carias")]
+__author__ = "Juan Sebastian"
+__helpers__ = ["Tekgar"]
 __version__ = "0.3.0"
-__github__ = "https://github.com/juansebastian2006/pydisc"
+__github__ = "https://github.com/juansebastian2006/cordic"
 
 gateaway_url = "wss://gateway.discord.gg"
 api_url = "https://discord.com/api/v9"
@@ -49,7 +50,7 @@ class CurrentClient:
         """Fetches the current client
 
         Raises:
-            ClientNotFound - if the client wasn't found
+            ClientNotFound: if the client wasn't found
         """
 
         if not cls.client:

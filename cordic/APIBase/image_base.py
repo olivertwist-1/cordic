@@ -22,10 +22,10 @@ def make_image_url(
         tag (typing.Optional[int]): The user tag in case avatar hash is None
 
     Raises:
-        cordic.errors.SizeOutOfBounds - when size out of bounds
+        cordic.errors.SizeOutOfBounds: when size out of bounds
 
     Return:
-        typing.Optional[str] - URL or None
+        typing.Optional[str]: URL or None
     """
     if size > 4096 or size < 16:
         raise cordic.SizeOutOfBounds

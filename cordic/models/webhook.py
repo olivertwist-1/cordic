@@ -94,10 +94,9 @@ class Webhook(BaseWebhook):
             id_ (int): The webhook id to fetch
 
         Return:
-            Webhook - The webhook requested
+            Webhook: The webhook requested
 
-        Note:
-            Authentication is required
+        Note: Authentication is required
         """
         client = cordic.CurrentClient.get_client()
 
@@ -117,7 +116,7 @@ class Webhook(BaseWebhook):
             token (str): The webhook's token
 
         Return:
-            Webhook - The webhook requested
+            Webhook: The webhook requested
 
         Note: Authentication not needed
         """
@@ -127,7 +126,6 @@ class Webhook(BaseWebhook):
                 "GET",
                 f"{cordic.api_url}/webhooks/{webhook_id}/{token}"
             )
-            print(await rs.json())
 
         return Webhook.from_data(await rs.json())
 
@@ -242,7 +240,6 @@ class Webhook(BaseWebhook):
 
         Note: needs to be authenticated
         """
-
         client = cordic.CurrentClient.get_client()
 
         await client.http.request(
@@ -255,7 +252,6 @@ class Webhook(BaseWebhook):
 
         Note: Doesn't need to be authenticated
         """
-
         async with aiohttp.ClientSession() as session:
             await session.request("DELETE", f"{cordic.api_url}/webhooks/{self.id}/{self.token}")
 
